@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const BASE_URL = "http://143.110.173.12:8080/employee";
+// const BASE_URL = "http://143.110.173.12:8080/employee";
+const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8080/employee"; // Fallback URL
+
 class EmployeeService{
 
     //**Method to get all employee from our api or database */
