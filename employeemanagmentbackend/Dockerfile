@@ -4,8 +4,9 @@ FROM eclipse-temurin:17-jdk-jammy
  
 WORKDIR /app
 
-COPY .mvnw/ .mvnw
-COPY mvnw pom.xml ./
+COPY . .
+# COPY mvnw pom.xml ./
+RUN mvn clean install -DskipTests
 
 COPY target/employeemanagmentbackend-0.0.1-SNAPSHOT.jar /app
 
