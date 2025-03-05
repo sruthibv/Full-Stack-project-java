@@ -1,7 +1,10 @@
 import axios from "axios";
+import dotenv from "dotenv";
+dotenv.config();
 
+const BASE_URL = process.env.BASE_URL || "http://localhost:8080/employee";
 // const BASE_URL = "http://143.110.173.12:8080/employee";
-const BASE_URL = process.env.REACT_APP_BASE_URL ; // Fallback URL
+// const BASE_URL = process.env.REACT_APP_BASE_URL ; // Fallback URL
 class EmployeeService{
 
     //**Method to get all employee from our api or database */
