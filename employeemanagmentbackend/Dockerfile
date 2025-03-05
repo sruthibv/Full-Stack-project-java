@@ -4,7 +4,7 @@ FROM eclipse-temurin:17-jdk-jammy
  
 WORKDIR /app
 
-COPY .mvn/ .mvn
+COPY .mvnw/ .mvnw
 COPY mvnw pom.xml ./
 
 COPY target/employeemanagmentbackend-0.0.1-SNAPSHOT.jar /app
