@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cpu-stress-tester-dev
+  namespace: dev # <<< IMPORTANT: Ensure this is your 'dev' namespace
+spec:
+  containers:
+  - name: stress-container
+    image: alpine/stress # Or a custom image with stress-ng
+    command: ["stress"] # Or ["stress-ng"]
+    args: ["--cpu", "4", "--timeout", "300s", "--vm", "2", "--vm-bytes", "256M"] # Example: 4 CPU workers, 5 min timeout, 2 memory workers, 256MB each
+    resources:
+      requests:
+        cpu: "200m" # Request some CPU
+        memory: "256Mi"
+      limits:
+        cpu: "4" # Allow it to use up to 4 CPU cores
+        memory: "512Mi" # Allow it to use up to 512MiB of memory
+  restartPolicy: Never # Important for a one-time stress run
+~                                                                                                                                                                                                                              
+~                                                                                                                                                                                                                              
+~                                                                                                                                                                                                                              
+~                                                                  
