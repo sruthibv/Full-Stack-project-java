@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Checkout from Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/Naveen-cloud-DevOps/Full-Stack-project.git'
+                git branch: 'main', url: 'https://github.com/sruthibv/Full-Stack-project-java.git'
             }
         }
         stage("Docker Image Build") {
