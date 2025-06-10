@@ -49,7 +49,7 @@ pipeline {
                         git config user.email "bsruthiuk@gmail.com"
                         git config user.name "${GIT_USER_NAME}"
                         echo ${BUILD_NUMBER}
-                        sed -i "s#image:.*#image: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPOSITORY}:${BUILD_NUMBER}#g" backend.yml
+                        sed -i "s#image:.*#image: ${AWS_ACCOUNT_ID}.dkr.ecr.${ AWS_DEFAULT_REGION}.amazonaws.com/${AWS_ECR_REPO_NAME }:${BUILD_NUMBER}#g" backend.yml
                         git add backend.yml
                         git commit -m "Updated backend deployment image to version ${BUILD_NUMBER}"
                         git push https://${git_token}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
