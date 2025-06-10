@@ -1,7 +1,7 @@
 import axios from "axios";
 
 //const BASE_URL = process.env.REACT_APP_BACKEND_URL
-const BASE_URL = "http://www.sruthilearns.online";
+const BASE_URL = "http://www.sruthilearns.online/employee";
 // const BASE_URL = process.env.REACT_APP_BASE_URL ; // Fallback URL
 class EmployeeService{
 
